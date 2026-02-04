@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>for zhoyya ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  font-family: 'Georgia', serif;
+  background: linear-gradient(to bottom, #5b0f1a, #2b0008);
+  color:#f5e6c8;
+}
+
+section{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:50px;
+  box-sizing:border-box;
+}
+
+.countdown{
+  text-align:center;
+}
+
+.timer{
+  font-size:2rem;
+  color:#ffd700;
+  margin-top:20px;
+}
+
+.page{
+  max-width:1100px;
+  display:flex;
+  align-items:center;
+  gap:40px;
+}
+
+.page img{
+  width:45%;
+  border:8px solid #ffd700;
+  border-radius:20px;
+}
+
+.text{
+  font-size:1.2rem;
+  line-height:1.8;
+}
+
+.reverse{
+  flex-direction:row-reverse;
+}
+
+.center{
+  flex-direction:column;
+  text-align:center;
+}
+
+.center img{
+  width:70%;
+}
+
+h2{
+  margin-top:20px;
+  color:#ffd700;
+}
+</style>
+</head>
+
+<body>
+
+<!-- COUNTDOWN -->
+<section id="countdown-section">
+  <div class="countdown">
+    <h1>counting every second for valentine day with you, zhoyya ❤️</h1>
+    <div class="timer" id="timer"></div>
+    <p>scroll will unlock when the time comes</p>
+  </div>
+</section>
+
+<!-- CONTENT (HIDDEN FIRST) -->
+<div id="content" style="display:none;">
+
+<section>
+  <div class="page">
+    <img src="foto1.jpeg">
+    <div class="text">
+      i am so happy that life brought you into my world ❤️<br><br>
+      having you in my life feels like a blessing i never knew i deserved
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="page reverse">
+    <img src="foto2.jpeg">
+    <div class="text">
+      i love you more deeply than words could ever explain ❤️<br><br>
+      my heart feels at home whenever it chooses you
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="page">
+    <img src="foto3.jpeg">
+    <div class="text">
+      i admired you from the very first moment we met ❤️<br><br>
+      something about you stayed quietly and forever in my heart
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="page reverse">
+    <img src="foto4.jpeg">
+    <div class="text">
+      thank you so much for supporting me until today ❤️<br><br>
+      your belief in me means more than you will ever know
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="page center">
+    <img src="foto5.jpeg">
+    <h2>our love forever</h2>
+  </div>
+</section>
+
+</div>
+
+<script>
+const target = new Date("2026-02-14T00:00:00+07:00").getTime();
+const timerEl = document.getElementById("timer");
+
+setInterval(()=>{
+  const now = new Date().getTime();
+  const diff = target - now;
+
+  if(diff <= 0){
+    document.getElementById("countdown-section").style.display="none";
+    document.getElementById("content").style.display="block";
+  }else{
+    const d = Math.floor(diff/(1000*60*60*24));
+    const h = Math.floor(diff%(1000*60*60*24)/(1000*60*60));
+    const m = Math.floor(diff%(1000*60*60)/(1000*60));
+    const s = Math.floor(diff%(1000*60)/1000);
+    timerEl.innerHTML = `${d} days ${h} hours ${m} minutes ${s} seconds`;
+  }
+},1000);
+</script>
+
+</body>
+</html>
